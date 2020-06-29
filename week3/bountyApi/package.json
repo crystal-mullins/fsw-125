@@ -1,10 +1,11 @@
 {
-  "name": "week2",
+  "name": "week3",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "bounty.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1","nodemon": "./node_modules/.bin/nodemon"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "./node_modules/.bin/nodemon"
   },
   "keywords": [],
   "author": "",
@@ -12,9 +13,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-generator": "^4.16.1",
+    "morgan": "^1.10.0",
     "uuid": "^7.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.4"
   }
 }

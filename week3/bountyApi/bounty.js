@@ -1,9 +1,12 @@
 const express = require("express")
 const app = express()
+const morgan = require('morgan')
 const {v4:uuidv4} = require('uuid')
-
+// middleware
+// looks for a request body
 app.use(express.json())
-
+// logs requests to the console
+app.use(morgan('dev'))
 
 const bountys = [
     {firstName:"Matt", lastName:"Madd", living: false, bounty_payout: 4000, type: "Sith", _id:uuidv4()},
@@ -25,6 +28,29 @@ app.post("/bountys", (req, res) => {
     res.send(`Successfully added ${newBounty} to the database`)
 
 })
-app.listen(9000, () => {
-    console.log("the server is running on port 9000")
+
+app.delete("/bountys/:bountysId", (req, res) => {
+    const bountysId = req.params.movieId
+    console.log(bountysId)
+    const bountysIndex = bountys.findIndex(bountys => bountys._id === bountysId)
+    bountys.splice(bountysIndex, 1)
+    res.send("Successfully delete bounty")
+})
+
+app.put("/bountys/:bountysId", (req, res) => {
+
+    const bountysId = req.params.bountysId
+    console.log(bountysId)
+    const updateObject = req.body
+    const bountysIndex = bountys.findIndex(bountys => bountys._id === bountysId)
+    const updatedBountys = Object.assign(bountys[bountysIndex], updateObject)
+    res.send(updatedBountys)
+
+})
+
+
+
+var port = 9001
+app.listen(port, () => {
+    console.log("the server is running on " + port)
 })
