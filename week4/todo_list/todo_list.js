@@ -67,19 +67,22 @@ app.post("/todo_list", (req, res) => {
 })
 
 // update one
-app.put("/:todoId", (req, res) => {
+app.put("/todo_list/:todoId", (req, res) => {
     const todoId = req.params.todoId
     const todoIndex = todo_list.findIndex(todo_list => todo_list._id === todoId)
     const updateTodo = Object.assign(todo_list[todoIndex], req.body)
     res.send(updateTodo)
 })
 
-app.delete("/:todoId", (req, res) => {
+app.delete("/todo_list/:todoId", (req, res) => {
     const todoId = req.params.todoId
-    const todoIndex = todo_list.finalIndex(todo => todo._id === todoId)
+    const todoIndex = todo_list.findIndex(todo_list => todo_list._id === todoId)
     todo_list.splice(todoIndex, 1)
     res.send("successfully deleted todo")
 })
 
 
+app.listen(3000,function(){
+      console.log("Live at Port 3000");
+    });
 
