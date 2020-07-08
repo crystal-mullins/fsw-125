@@ -14,21 +14,21 @@ class BountyCard extends Component{
     render(){
     return(
         <div> 
-            <h1 style={{backgroundColor:"aqua"}}>OLD REPUBLIC BOUNTY LIST</h1>
+            <h1 style={{backgroundColor:"aqua"}}>HUSBAND HUNT BOUNTY LIST</h1>
         <div className="wrapper">
 
 
                 <p>Name: {this.state.firstName} {this.state.lastName}</p>
                 
-                <p>Living: {this.state.living}</p>
+                <p>SINGLE {this.state.living}</p>
                 <p>Bounty Payout: {this.state.bounty_payout}</p>
                 <p>Type: {this.state.type}</p>
                 
                 <button onClick={ () => this.state.handleDelete(this.state.index)} 
-                > Delete User</button>
+                > Delete Bounty</button>
 
                 <button onClick={ () => { this.setState({updating: true})}} 
-                > Update Bounty</button>
+                > Cashout Bounty</button>
                
             
             {/* we have to coditionally render the update form here*/}
