@@ -1,0 +1,11 @@
+# status codes
+#200 - Successsful Request
+#201-   Successsful Incert/ update
+#401-   unauthorized
+#404-   not found
+#500-   server Error
+
+
+
+
+#https://http.cat

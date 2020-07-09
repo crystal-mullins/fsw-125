@@ -14,7 +14,10 @@ app.use("/bountys", require("./routes/bountyRoute.js"));
 
 // app.use("/tvshows", require("./routes/tvshowRouter.js"));
 
-
+app.use((err, req, res, next) => {
+  console.log(err)
+  return res.send({errMsg: err.message })
+})
 
 
 // Listen to this Port
