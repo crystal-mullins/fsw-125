@@ -7,6 +7,7 @@ const {v4:uuidv4} = require('uuid')
 jmSongRouter.use(express.json())
 // logs requests to the console
 jmSongRouter.use(morgan('dev'))
+// cont songlist
 
 const songlist = [
 
@@ -91,8 +92,12 @@ jmSongRouter.get("/:songlistId", (req, res, next) => {
 // get by key value
 
 jmSongRouter.get("/search/type", (req, res, next) => {
-    const type = req.params.type
-    const filteredSongs = songlist.filter(songlist => songlist.type === type)
+    const type = req.query.type
+    const filteredSongs = songlist.filter(songlist => {
+        console.log(songlist)
+    return songlist.type === type})
+
+    console.log()
     if(!type){
         const error = new Error("You must provide letter")
         res.status(500)
