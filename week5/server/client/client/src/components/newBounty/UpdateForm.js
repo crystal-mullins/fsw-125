@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import BountyList from './BountyList'
-
+import axios from 'axios'
 
 class UpdateForm extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={
             firstName:'',
             lastName:'',
@@ -12,6 +12,7 @@ class UpdateForm extends Component {
             bounty_payout:'',
             type:'',
             bountyBadges:[],
+            id: this.props.id
             
         }
     }
@@ -20,7 +21,28 @@ class UpdateForm extends Component {
     this.setState({ [name] : value})
     }
 
-    
+       
+    handleUpdate = (updateState, id) => {
+        let updatedBountyArray = this.state.bountyBadges
+console.log("updateState", updateState)
+const {firstName,
+        lastName,
+        living,
+        bounty_payout,
+        type} = updateState
+var updatedBounty= {
+    firstName,
+    lastName,
+    living,
+    bounty_payout,
+    type
+}
+
+axios.put('./bountys/' + id, updatedBounty ).then(res => {
+   
+    console.log(res)
+})
+}
 
 
     render(){
@@ -28,9 +50,11 @@ class UpdateForm extends Component {
         return(
             <div> 
                 
-                <form className="wrapper" onSubmit={(e)=>{
+                <form id={this.state.id} className="wrapper" onSubmit={(e)=>{
                     e.preventDefault()
-                    this.props.handleUpdate(this.props.index,  this.state)}}>
+                    this.handleUpdate(this.state, 
+                     e.currentTarget.id)
+                     window.location.reload()}}>
                 <input
                 type="text"
                 name="firstName"
@@ -79,7 +103,7 @@ class UpdateForm extends Component {
                
                
                 
-                <button style={{gridColumn:"span 2", width:"50%", marginLeft:"25%"}}>On Submit</button>
+                <button id={this.state.id} style={{gridColumn:"span 2", width:"50%", marginLeft:"25%"}}>Update</button>
 
                 </form>
                 <BountyList 

@@ -55,7 +55,7 @@ export default class BountyForm extends Component {
             type:'',
             
          })
-        
+       
 
     }
 
@@ -68,26 +68,26 @@ export default class BountyForm extends Component {
     
     
     
-    handleUpdate = (i, updateState) => {
-            let updatedBountyArray = this.state.bountyBadges
-   console.log("updateState", updateState)
-   const {firstName,
-            lastName,
-            living,
-            bounty_payout,
-            type} = updateState
-    var updatedBounty= {
-        firstName,
-        lastName,
-        living,
-        bounty_payout,
-        type
-    }
-    Object.assign(updatedBountyArray[i], updatedBounty)
-    console.log("updatedBountyArray",updatedBountyArray)
-            this.setState({bountyBadges: updatedBountyArray})
+//     handleUpdate = (i, updateState) => {
+//             let updatedBountyArray = this.state.bountyBadges
+//    console.log("updateState", updateState)
+//    const {firstName,
+//             lastName,
+//             living,
+//             bounty_payout,
+//             type} = updateState
+//     var updatedBounty= {
+//         firstName,
+//         lastName,
+//         living,
+//         bounty_payout,
+//         type
+//     }
+//     Object.assign(updatedBountyArray[i], updatedBounty)
+//     console.log("updatedBountyArray",updatedBountyArray)
+//             this.setState({bountyBadges: updatedBountyArray})
     
-    }
+//     }
     render(){
         
         return(

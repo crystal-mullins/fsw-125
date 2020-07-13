@@ -29,6 +29,7 @@ class BountyList extends Component {
                 handleDelete={this.props.handleDelete}
                 
                 handleUpdate={this.props.handleUpdate}
+                id={card._id}
                 
                 />
             )
