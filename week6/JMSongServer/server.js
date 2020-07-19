@@ -3,7 +3,7 @@ const app = express();
  app.use(express.json())
 
 
-app.use("/songlist", require("./jmsongrouter.js"));
+app.use("/songlist/", require("./jmsongrouter.js"));
 
 
 app.use((err, req, res, next) => {
