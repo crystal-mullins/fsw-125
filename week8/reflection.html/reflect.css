@@ -1,0 +1,38 @@
+.heading{
+    color: blue;
+    background-color: antiquewhite;
+}
+
+.q-one{
+    font-size: x-large;
+    color: green;
+    background-color: lightcoral;
+}
+
+.q-two{
+    font-size: x-large;
+    color: red;
+    background-color: violet;
+}
+
+.q-three{
+    font-size: x-large;
+    color: slateblue;
+    background-color: deepskyblue;
+
+}
+a.one{
+    font-size: x-large;
+    color:purple;
+    background-color: slategrey;
+}
+a.twp{
+    font-size: x-large;
+    color:purple;
+    background-color: slategrey;
+}
+a.three{
+    font-size: x-large;
+    color:purple;
+    background-color: slategrey;
+}
