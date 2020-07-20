@@ -14,7 +14,7 @@ class SongForm extends Component{
                 pop: '',
                 author: '',
                 type: '',
-                songs: '', 
+                song: '', 
                    
                   handleDelete: this.handleDelete,
                    handleEdit: this.handleEdit
@@ -50,7 +50,7 @@ render(){
                 <form onSubmit={this.handleSubmit} className="song-form-wrap"
                 
                 >
-                    <textarea className="song-input-box"
+                    <input className="song-input-box"
 
                       type="text"
                       name="song"
@@ -58,7 +58,7 @@ render(){
                       value={this.state.song}
                       onChange={this.handleChange}
 
-/>
+              />
 
                       <input className="author-box"
 

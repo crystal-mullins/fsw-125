@@ -23,7 +23,12 @@ class SongCard extends Component{
        
       }
 
-
+      handleDelete = (i) => {
+        let updatedSongArray = this.state.songCards
+        updatedSongArray.splice(i, 1)
+        this.state({songCards: updatedSongArray})
+    }
+  
 
     handleSubmit = (newObject) =>{
 console.log(newObject)
@@ -49,7 +54,7 @@ console.log(newObject)
 
                 <div className='song-card'>
 
-                <p>Song Name: {this.state.songs}</p>
+                <p>Song Name: {this.state.song}</p>
                 
                 <p>author: {this.state.author}</p>
 

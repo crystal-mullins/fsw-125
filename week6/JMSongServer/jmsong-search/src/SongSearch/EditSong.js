@@ -22,9 +22,9 @@ class EditSong extends Component {
     }
 
     handleDelete = (i) => {
-        let updatedSongArray = this.state.songBadges
+        let updatedSongArray = this.state.songCards
         updatedSongArray.splice(i, 1)
-        this.state({songBadges: updatedSongArray})
+        this.state({songCards: updatedSongArray})
     }
   
 
@@ -101,7 +101,7 @@ axios.put('./songlist/' + id, editedSong ).then(res => {
                 />
                
                 
-                <button id={this.state.id} style={{gridColumn:"span 2", width:"50%", marginLeft:"25%"}}>edit</button>
+              
 
                 </form>
                 <SongList 

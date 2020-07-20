@@ -12,7 +12,7 @@ export default class SearchForm extends Component {
             pop: '',
             author: '',
             type: '',
-            songs: '', 
+            song: '', 
             handleDelete: this.handleDelete,
             handleEdit: this.handleEdit
         }
